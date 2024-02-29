@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Short Links For You And Your Goals!')
+@section('title')
 
 @section('content')
+
+    <div>
+        <a href="{{ route('links.links') }}">See Links</a>
+    </div>
 
     <p>Try to short your link:</p>
     <div class="form-block">

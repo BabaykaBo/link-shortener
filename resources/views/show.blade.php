@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Short Links For You And Your Goals!')
+@section('title')
 
 @section('content')
 

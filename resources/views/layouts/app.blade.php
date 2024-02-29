@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>@yield('title')</h1>
+    <h1>@yield('title', 'Short Links For You And Your Goals!')</h1>
     <main>
         @yield('content')
     </main>

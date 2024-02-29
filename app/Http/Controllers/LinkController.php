@@ -12,7 +12,7 @@ class LinkController extends Controller
         return view('index');
     }
 
-    public function show(?Link $link)
+    public function show(Link $link)
     {
         return view('show', ['link' => $link]);
     }
@@ -41,6 +41,16 @@ class LinkController extends Controller
     {
         $link = Link::where('short_code', $code)->first();
 
+        $link->count += 1;
+        $link->save();
+
         return redirect($link->url);
+    }
+
+    public function links()
+    {
+        $links = Link::paginate(10);
+
+        return view('links', ['links' => $links]);
     }
 }
