@@ -14,8 +14,8 @@ use App\Http\Controllers\LinkController;
 */
 Route::get('/', [LinkController::class, 'index'])->name('links.index');
 
-Route::get('/{code}', [LinkController::class, 'code_redirect'])->name('links.code_redirect');
+Route::get('/{code}', [LinkController::class, 'code_redirect'])->where('code', '[a-f0-9]{6}')->name('links.code_redirect');
 
-// Route::get('/show/{link}', [LinkController::class, 'show'])->name('links.show');
+Route::get('/show/{link}', [LinkController::class, 'show'])->name('links.show');
 
 Route::post('/create', [LinkController::class, 'create'])->name('links.create');

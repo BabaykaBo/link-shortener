@@ -36,4 +36,11 @@ class LinkController extends Controller
 
         return redirect()->route('links.show', ['link' => $link]);
     }
+
+    public function code_redirect(string $code)
+    {
+        $link = Link::where('short_code', $code)->first();
+
+        return redirect($link->url);
+    }
 }
